@@ -1,27 +1,27 @@
 import React from 'react';
-import { View, Text, Linking } from 'react-native';
-import { useDispatch, useSelector } from 'react-redux';
+import {View, Text, Linking} from 'react-native';
+import {useDispatch, useSelector} from 'react-redux';
 import RNRestart from 'react-native-restart';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import I18n from 'i18next';
 
-import { Styles } from './SettingsPage.style';
-import { Routes } from '../../Navigation/Routes';
-import { Row } from '../../Components/Row/RowComponent';
-import { Constants } from '../../Utils/Constants';
-import { Lists } from '../../Components/Lists/ListsComponent';
-import { setLang } from '../../Redux/Actions/Language/Language';
-import { changeLanguage } from '../../Utils/Translation';
-import { RadioComponent } from '../../Components/Radio/RadioComponent';
-import { SwitchComponent } from '../../Components/Switch/SwitchComponent';
-import { ModalOptions } from '../../Components/ModalOptions/ModalOptionsComponent';
+import {Styles} from './SettingsPage.style';
+import {Routes} from '../../Navigation/Routes';
+import {Row} from '../../Components/Row/RowComponent';
+import {Constants} from '../../Utils/Constants';
+import {Lists} from '../../Components/Lists/ListsComponent';
+import {setLang} from '../../Redux/Actions/Language/Language';
+import {changeLanguage} from '../../Utils/Translation';
+import {RadioComponent} from '../../Components/Radio/RadioComponent';
+import {SwitchComponent} from '../../Components/Switch/SwitchComponent';
+import {ModalOptions} from '../../Components/ModalOptions/ModalOptionsComponent';
 
-const SettingsPage = ({ navigation }) => {
+const SettingsPage = ({navigation}) => {
   const dispatch = useDispatch();
   const [switchBtn, setSwitchBtn] = React.useState(false);
   const [modalVisible, setModalVisible] = React.useState(false);
   const [modalContentType, setModalContentType] = React.useState('');
-  const { language } = useSelector(state => ({
+  const {language} = useSelector(state => ({
     language: state.language.language,
   }));
 
@@ -89,7 +89,7 @@ const SettingsPage = ({ navigation }) => {
   ];
 
   const renderLang = () => {
-    const { LangLists } = Constants;
+    const {LangLists} = Constants;
     return LangLists.map((item, i) => (
       <RadioComponent
         key={i}

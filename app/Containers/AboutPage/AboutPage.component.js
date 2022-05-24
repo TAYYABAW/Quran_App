@@ -1,8 +1,8 @@
 import React from 'react';
-import { View, Text, Image } from 'react-native';
+import {View, Text, Image} from 'react-native';
 import I18n from 'i18next';
 
-import { Styles } from './AboutPage.style';
+import {Styles} from './AboutPage.style';
 
 const AboutPage = () => {
   return (

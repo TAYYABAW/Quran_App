@@ -1,13 +1,13 @@
-import React, { useEffect, useCallback } from 'react';
-import { FlatList, BackHandler } from 'react-native';
+import React, {useEffect, useCallback} from 'react';
+import {FlatList, BackHandler} from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
 
-import { ModalDialog } from '../../Components/ModalDialog/ModalDialogComponent';
-import { Loading } from '../../Components/Loading/Loading.component';
-import { CardSurahList } from '../../Components/CardSurahList/CardSurahList.component';
-import { Separator } from '../../Components/Separator/Separator.component';
-import { Routes } from '../../Navigation/Routes';
-import { keyExtractor } from '../../Utils/Helper';
+import {ModalDialog} from '../../Components/ModalDialog/ModalDialogComponent';
+import {Loading} from '../../Components/Loading/Loading.component';
+import {CardSurahList} from '../../Components/CardSurahList/CardSurahList.component';
+import {Separator} from '../../Components/Separator/Separator.component';
+import {Routes} from '../../Navigation/Routes';
+import {keyExtractor} from '../../Utils/Helper';
 
 function QuranList(props) {
   const {
@@ -30,13 +30,13 @@ function QuranList(props) {
   }, [getQuranList]);
 
   const goToDetailpage = dataSurah => {
-    navigation.navigate(Routes.QuranDetail, { dataSurah });
+    navigation.navigate(Routes.QuranDetail, {dataSurah});
   };
 
   const renderListEmpty = () => {
     return (
       <ModalDialog
-        type="Peringatan"
+        type="Warning"
         isVisible={isError}
         onPressOke={() => BackHandler.exitApp()}
         message={errorMessage}
@@ -44,7 +44,7 @@ function QuranList(props) {
     );
   };
 
-  const renderCardContent = ({ item }) => {
+  const renderCardContent = ({item}) => {
     return (
       <CardSurahList
         surahNumber={item?.id}

@@ -8,4 +8,4 @@ const changeLanguage = async lang => {
   });
 };
 
-export { changeLanguage };
+export {changeLanguage};

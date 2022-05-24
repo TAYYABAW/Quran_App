@@ -1,15 +1,15 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import { TouchableRipple } from 'react-native-paper';
+import {View, Text} from 'react-native';
+import {TouchableRipple} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import Menu, { MenuItem, MenuDivider } from 'react-native-material-menu';
+import Menu, {MenuItem, MenuDivider} from 'react-native-material-menu';
 import I18n from 'i18next';
 
-import { Styles } from './HeaderSurahList.style';
-import { Routes } from '../../Navigation/Routes';
-import { Colors } from '../../Themes/Colors';
+import {Styles} from './HeaderSurahList.style';
+import {Routes} from '../../Navigation/Routes';
+import {Colors} from '../../Themes/Colors';
 
-const HeaderComponent = ({ title, navigation }) => {
+const HeaderComponent = ({title, navigation}) => {
   let _menu = null;
 
   const setMenuRef = ref => {
@@ -42,7 +42,7 @@ const HeaderComponent = ({ title, navigation }) => {
       <Text style={Styles.title}>{title}</Text>
       <TouchableRipple onPress={() => null} rippleColor={Colors.rippleColor}>
         <View style={Styles.viewRowPoint}>
-          <Menu ref={setMenuRef} button={renderButton()} animationDuration={0}>
+          {/* <Menu ref={setMenuRef} button={renderButton()} animationDuration={0}>
             <MenuItem onPress={redirectTo(Routes.SettingsPage)}>
               {I18n.t('SettingsTitle')}
             </MenuItem>
@@ -50,11 +50,11 @@ const HeaderComponent = ({ title, navigation }) => {
               {I18n.t('AboutTitle')}
             </MenuItem>
             <MenuDivider />
-          </Menu>
+          </Menu> */}
         </View>
       </TouchableRipple>
     </View>
   );
 };
 
-export { HeaderComponent };
+export {HeaderComponent};

@@ -1,17 +1,17 @@
 import React from 'react';
 import I18n from 'i18next';
-import { createAppContainer } from 'react-navigation';
-import { createStackNavigator } from 'react-navigation-stack';
+import {createAppContainer} from 'react-navigation';
+import {createStackNavigator} from 'react-navigation-stack';
 
 import AboutPage from '../Containers/AboutPage/AboutPage.component';
 import QuranList from '../Containers/QuranListPage/QuranList.container';
 import QuranDetail from '../Containers/QuranDetailPage/QuranDetail.container';
 import SettingsPage from '../Containers/SettingsPage/SettingsPage.component';
 import SplashScreen from '../Containers/SplashScreenPage/SplashScreen.component';
-import { Colors } from '../Themes/Colors';
-import { FontType } from '../Themes/Fonts';
-import { fromRight } from '../Utils/Transition';
-import { HeaderComponent } from '../Components/HeaderSurahList/HeaderSurahList.component';
+import {Colors} from '../Themes/Colors';
+import {FontType} from '../Themes/Fonts';
+import {fromRight} from '../Utils/Transition';
+import {HeaderComponent} from '../Components/HeaderSurahList/HeaderSurahList.component';
 
 const AppStack = createStackNavigator(
   {

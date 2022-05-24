@@ -6,4 +6,4 @@ const Routes = {
   SplashScreen: 'SplashScreen',
 };
 
-export { Routes };
+export {Routes};

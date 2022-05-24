@@ -1,6 +1,6 @@
-import { StyleSheet } from 'react-native';
+import {StyleSheet} from 'react-native';
 
-import { FontType } from '../../Themes/Fonts';
+import {FontType} from '../../Themes/Fonts';
 
 const Styles = StyleSheet.create({
   container: {
@@ -32,4 +32,4 @@ const Styles = StyleSheet.create({
   },
 });
 
-export { Styles };
+export {Styles};

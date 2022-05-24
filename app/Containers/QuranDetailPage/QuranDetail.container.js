@@ -1,7 +1,7 @@
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 
 import QuranDetail from './QuranDetail.component';
-import { getDetailQuran } from '../../Redux/Actions/QuranDetail/QuranDetail';
+import {getDetailQuran} from '../../Redux/Actions/QuranDetail/QuranDetail';
 
 const mapStateToProps = state => ({
   dataAyat: state.qurandetail.data,
@@ -13,7 +13,4 @@ const mapDispatchToProps = dispatch => ({
   getDetailQuran: payload => dispatch(getDetailQuran(payload)),
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(QuranDetail);
+export default connect(mapStateToProps, mapDispatchToProps)(QuranDetail);

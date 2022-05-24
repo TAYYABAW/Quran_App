@@ -1,14 +1,14 @@
 import React from 'react';
-import { View, Alert, BackHandler } from 'react-native';
-import { useDispatch } from 'react-redux';
+import {View, Alert, BackHandler} from 'react-native';
+import {useDispatch} from 'react-redux';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-import { Routes } from '../../Navigation/Routes';
-import { resetNavigationTo } from '../../Utils/Navigations';
-import { isNetworkConnected } from '../../Utils/Helper';
-import { setLang } from '../../Redux/Actions/Language/Language';
-import { changeLanguage } from '../../Utils/Translation';
-import { Constants } from '../../Utils/Constants';
+import {Routes} from '../../Navigation/Routes';
+import {resetNavigationTo} from '../../Utils/Navigations';
+import {isNetworkConnected} from '../../Utils/Helper';
+import {setLang} from '../../Redux/Actions/Language/Language';
+import {changeLanguage} from '../../Utils/Translation';
+import {Constants} from '../../Utils/Constants';
 
 const SplashScreenPage = props => {
   const dispatch = useDispatch();
@@ -44,7 +44,7 @@ const SplashScreenPage = props => {
 
   const navigate = React.useCallback(
     async screen => {
-      const { navigation } = props;
+      const {navigation} = props;
 
       const resetNavigation = resetNavigationTo(screen);
       try {
@@ -54,10 +54,10 @@ const SplashScreenPage = props => {
         }, 1000);
       } catch (error) {
         Alert.alert(
-          'Peringatan',
-          'Nampaknya Anda sedang offline, mohon nyalakan data seluler untuk melanjutkan.',
-          [{ text: 'OK', onPress: () => BackHandler.exitApp() }],
-          { cancelable: false },
+          'Warning ',
+          'It appears you are offline, mohon nyalakan data seluler untuk melanjutkan.',
+          [{text: 'OK', onPress: () => BackHandler.exitApp()}],
+          {cancelable: false},
         );
       }
     },

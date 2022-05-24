@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useEffect, useRef, Fragment } from 'react';
+import React, {useState, useEffect, useRef, Fragment} from 'react';
 import {
   View,
   Text,
@@ -15,16 +15,16 @@ import Clipboard from '@react-native-community/clipboard';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import get from 'lodash/get';
 
-import { Basmallah } from '../../Components/Basmallah/Basmallah.component';
-import { Loading } from '../../Components/Loading/Loading.component';
-import { CardAyatList } from '../../Components/CardAyatList/CardAyatList.component';
-import { Separator } from '../../Components/Separator/Separator.component';
-import { Constants } from '../../Utils/Constants';
-import { HeaderSurahDetail } from '../../Components/HeaderSurahDetail/HeaderSurahDetail.component';
-import { keyExtractor } from '../../Utils/Helper';
-import { FontType } from '../../Themes/Fonts';
-import { Colors } from '../../Themes/Colors';
-import { RbSheetStyle } from '../../Themes/Styles';
+import {Basmallah} from '../../Components/Basmallah/Basmallah.component';
+import {Loading} from '../../Components/Loading/Loading.component';
+import {CardAyatList} from '../../Components/CardAyatList/CardAyatList.component';
+import {Separator} from '../../Components/Separator/Separator.component';
+import {Constants} from '../../Utils/Constants';
+import {HeaderSurahDetail} from '../../Components/HeaderSurahDetail/HeaderSurahDetail.component';
+import {keyExtractor} from '../../Utils/Helper';
+import {FontType} from '../../Themes/Fonts';
+import {Colors} from '../../Themes/Colors';
+import {RbSheetStyle} from '../../Themes/Styles';
 
 function QuranDetail(props) {
   const refRBSheet = useRef();
@@ -58,7 +58,7 @@ function QuranDetail(props) {
   ];
 
   const renderDetailSurah = async () => {
-    const { getDetailQuran, navigation } = props;
+    const {getDetailQuran, navigation} = props;
 
     const surahId = get(navigation, 'state.params.dataSurah.id');
     const countAyat = get(navigation, 'state.params.dataSurah.count_ayat');
@@ -80,9 +80,7 @@ function QuranDetail(props) {
   const onTapShare = async () => {
     try {
       const result = await Share.share({
-        message: `${rbSheetData.aya_text}\n\n${
-          rbSheetData.translation_aya_text
-        }`,
+        message: `${rbSheetData.aya_text}\n\n${rbSheetData.translation_aya_text}`,
       });
       if (result.action === Share.sharedAction) {
         if (!result.activityType) {
@@ -110,7 +108,7 @@ function QuranDetail(props) {
   };
 
   const listHeaderComponent = () => {
-    const { navigation } = props;
+    const {navigation} = props;
 
     const surahId = get(navigation, 'state.params.dataSurah.id', '');
 
@@ -124,7 +122,7 @@ function QuranDetail(props) {
     }
   };
 
-  const renderCardContent = ({ item }) => {
+  const renderCardContent = ({item}) => {
     return (
       <CardAyatList
         ayatNumber={item?.aya_number}
@@ -136,7 +134,7 @@ function QuranDetail(props) {
   };
 
   const renderQuranOptions = () => {
-    const { navigation } = props;
+    const {navigation} = props;
     const surahName = get(navigation, 'state.params.dataSurah.surat_name', '');
     return (
       <View style={Styles.bsContainer}>
@@ -175,7 +173,7 @@ function QuranDetail(props) {
   };
 
   const renderData = () => {
-    const { dataAyat, refreshing } = props;
+    const {dataAyat, refreshing} = props;
     return (
       <FlatList
         data={dataAyat}
@@ -203,7 +201,7 @@ function QuranDetail(props) {
 QuranDetail.navigationOptions = ({
   navigation: {
     state: {
-      params: { dataSurah },
+      params: {dataSurah},
     },
   },
 }) => {

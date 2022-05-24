@@ -4,11 +4,11 @@ import {
   REQ_QURAN_LIST_FAILURE,
 } from '../Types';
 import axios from 'axios';
-import { quranList } from '../../../Utils/EndPoints';
-import { Constants } from '../../../Utils/Constants';
+import {quranList} from '../../../Utils/EndPoints';
+import {Constants} from '../../../Utils/Constants';
 
 const getQuranList = () => async dispatch => {
-  dispatch({ type: REQ_QURAN_LIST });
+  dispatch({type: REQ_QURAN_LIST});
   try {
     const response = await axios.get(quranList);
     if (response?.status === Constants.RESPONSE_CODE.SUCCESS) {
@@ -26,9 +26,10 @@ const getQuranList = () => async dispatch => {
   } catch (error) {
     dispatch({
       type: REQ_QURAN_LIST_FAILURE,
-      error: 'Request Surah gagal. Mohon Periksa kembali koneksi internet Anda',
+      error:
+        'Surah request failed. Please double check your internet connection',
     });
   }
 };
 
-export { getQuranList };
+export {getQuranList};
