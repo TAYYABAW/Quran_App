@@ -1,5 +1,5 @@
 import I18n from 'i18next';
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const changeLanguage = async lang => {
   AsyncStorage.setItem('userLanguage', lang);

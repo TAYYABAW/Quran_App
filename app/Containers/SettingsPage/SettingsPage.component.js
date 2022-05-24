@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, Linking } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import RNRestart from 'react-native-restart';
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import I18n from 'i18next';
 
 import { Styles } from './SettingsPage.style';
